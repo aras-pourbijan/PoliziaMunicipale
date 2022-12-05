@@ -1,0 +1,57 @@
+select COUNT(*) as totale from VERBALE
+
+select IDanagrafica,COUNT(*) as toale from VERBALE
+group by IDanagrafica
+
+select IDviolazione, COUNT(*) from VERBALE
+group by IDviolazione
+
+select IDanagrafica,sum(DecurtamentoPunti) as totalePuntiDecurtati  from VERBALE
+group by IDanagrafica
+
+select Cognome, Nome, DataViolazione, IndirizzoViolazione, importo , DecurtamentoPunti 
+from ANAGRAFICA as x
+inner join 
+verbale as y on
+x.IDanagrafica = y.IDanagrafica
+where x.Citta='palermo'
+
+select Cognome, Nome, DataViolazione, IndirizzoViolazione, importo , DecurtamentoPunti 
+from ANAGRAFICA as x
+inner join 
+verbale as y on
+x.IDanagrafica = y.IDanagrafica
+where y.DataViolazione between '2009-02-01' and '2009-07-01'
+
+select IDanagrafica ,sum(importo) as totale from VERBALE
+group by IDanagrafica
+
+select * from ANAGRAFICA
+where citta='palermo'
+
+select NominativoAgente,count(*) from VERBALE
+group by NominativoAgente
+
+select Cognome, Nome, Indirizzo, DataViolazione, importo , DecurtamentoPunti 
+from ANAGRAFICA as x
+inner join 
+verbale as y on
+x.IDanagrafica = y.IDanagrafica
+where y.DecurtamentoPunti>5 
+
+select Cognome, Nome, Indirizzo, DataViolazione, importo , DecurtamentoPunti 
+from ANAGRAFICA as x
+inner join 
+verbale as y on
+x.IDanagrafica = y.IDanagrafica
+where y.importo>400
+
+
+
+
+
+
+
+
+
+
